@@ -86,6 +86,13 @@ spec:
           volumeMounts:
             - name: cache
               mountPath: /app/tmp
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 180
+            periodSeconds: 10
+            failureThreshold: 5
       serviceAccountName: {{ include "chatwoot.serviceAccountName" . }}
       {{- if .Values.securityContext }}
       securityContext: {{ .Values.securityContext | toYaml | nindent 8 }}
