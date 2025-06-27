@@ -14,10 +14,16 @@ metadata:
     {{- end }}
 spec:
   ports:
-    - name: {{ .Values.services.name | quote}}
-      port: {{ int .Values.services.internalPort }}
+    - name: https
+      port: 443
       targetPort: {{ int .Values.services.targetPort }}
   type: {{ .Values.services.type }}
+  {{- if .Values.services.loadBalancerSourceRanges }}
+  loadBalancerSourceRanges:
+  {{- range .Values.services.loadBalancerSourceRanges }}
+    - {{ . }}
+  {{- end }}
+  {{- end }}
   selector:
     app: {{ template "chatwoot.fullname" . }}
     role: web
