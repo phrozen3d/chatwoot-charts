@@ -1,16 +1,10 @@
-# Chatwoot Helm Charts
-[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/artifact-hub)](https://artifacthub.io/packages/helm/chatwoot/chatwoot)
+# Chatwoot Helm Charts (Phrozen Fork)
 
-This repository contains helm charts for [Chatwoot](https://github.com/chatwoot/chatwoot).
+This is a **forked version** of [Chatwoot/charts](https://github.com/chatwoot/charts), helm charts for [Chatwoot](https://github.com/chatwoot/chatwoot).
+For full documentation and upstream details, please refer to the original repository:  
+👉 [https://github.com/chatwoot/charts](https://github.com/chatwoot/charts)
 
-## Installation
-```bash
-helm repo add chatwoot https://chatwoot.github.io/charts
-helm install chatwoot chatwoot/chatwoot
-```
+## 🔧 Phrozen Custom Features
 
-## Configuration
-Check the [README.md](./charts/chatwoot/README.md)
-
-## Questions? Feedback?
-[Join our discord server.](https://discord.gg/cJXdrwS)
+- [x] **LoadBalancerSourceRanges**
+- [x] **ReadinessProbe**
