@@ -14,8 +14,8 @@ metadata:
     {{- end }}
 spec:
   ports:
-    - name: https
-      port: 443
+    - name: {{ .Values.services.name | quote}}
+      port: {{ int .Values.services.internalPort }}
       targetPort: {{ int .Values.services.targetPort }}
   type: {{ .Values.services.type }}
   {{- if .Values.services.loadBalancerSourceRanges }}
